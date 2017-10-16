@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.oakkub.MainActivity">
+    android:orientation="vertical">
 
-    <TextView
+    <com.oakkub.android.PinCodeEditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_gravity="center_horizontal"
+        android:maxLength="4"
+        android:padding="16dp" />
 
-</FrameLayout>
+    <com.oakkub.android.PinCodeEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        app:pinHeight="24dp"
+        app:pinHighlightStateDrawable="@drawable/pin_red_oval_highlight_state"
+        app:pinNormalStateDrawable="@drawable/pin_red_oval_normal_state"
+        app:pinSpace="16dp"
+        app:pinWidth="24dp" />
+
+    <com.oakkub.android.PinCodeEditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        app:pinHeight="24dp"
+        app:pinHighlightStateDrawable="@drawable/pin_blue_rect_highlight_state"
+        app:pinNormalStateDrawable="@drawable/pin_blue_rect_normal_state"
+        app:pinSpace="16dp"
+        app:pinWidth="24dp" />
+
+</LinearLayout>
