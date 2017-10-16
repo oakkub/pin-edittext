@@ -8,15 +8,15 @@ Usage
 Include `PinCodeEditText` in your layout XML
 ```xml
 <com.oakkub.android.PinCodeEditText
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:maxLength="4"
-			android:inputType="textNoSuggestions"
-            app:pinHighlightStateDrawable="@drawable/pin_oval_highlight_state"
-            app:pinNormalStateDrawable="@drawable/pin_oval_normal_state"
-            app:pinSpace="16dp"
-			app:pinHeight="24dp"
-            app:pinWidth="24dp"/>
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:maxLength="4"
+    android:inputType="textNoSuggestions"
+    app:pinHighlightStateDrawable="@drawable/pin_oval_highlight_state"
+    app:pinNormalStateDrawable="@drawable/pin_oval_normal_state"
+    app:pinSpace="16dp"
+    app:pinHeight="24dp"
+    app:pinWidth="24dp"/>
 ```
 - **android:maxLength:** The total pin
 - **android:inputType:** Preferred "textNoSuggestions" (If you want text) or "number" (If you want only number)
