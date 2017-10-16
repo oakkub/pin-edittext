@@ -20,9 +20,9 @@ Include `PinCodeEditText` in your layout XML
 ```
 - **android:maxLength:** The total pin
 - **android:inputType:** Preferred "textNoSuggestions" (If you want text) or "number" (If you want only number)
-- **app:pinSpace:** Space between each pin
-- **app:pinHeight:** Height of each pin
-- **app:pinWidth:** Width of each pin
+- **app:pinSpace:** Space between each pin (Default: 16dp)
+- **app:pinHeight:** Height of each pin (Default: 24dp)
+- **app:pinWidth:** Width of each pin (Default: 24dp)
 - **app:pinHighlightStateDrawable:** Drawable of each pin that already has text
 - **app:pinNormalStateDrawable:** Drawable of each empty pin
 
