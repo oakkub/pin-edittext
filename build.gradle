@@ -6,8 +6,8 @@ buildscript {
         compileSdkVersion = 26
         minSdkVersion = 15
         targetSdkVersion = 26
-        libVersionCode = 1
-        libVersionName = '1.0.0'
+        libVersionCode = 2
+        libVersionName = '1.1.0'
         supportLibraryVersion = '26.1.0'
         kotlinVersion = '1.1.51'
     }
