@@ -33,18 +33,18 @@ dokka {
 
 ext {
     bintrayRepo = 'oakkub' // Default is 'maven'
-    bintrayName = 'pincode-edittext'
+    bintrayName = 'pin-edittext'
 
-    publishedGroupId = 'com.oakkub' // Maven Group ID for the artifact
-    libraryName = 'PinCodeEditText'
-    artifact = 'pincode-edittext'
+    publishedGroupId = 'com.oakkub.android' // Maven Group ID for the artifact
+    libraryName = 'PinEditText'
+    artifact = 'pin-edittext'
 
-    libraryDescription = 'An extension of EditText that has a pin-code style'
+    libraryDescription = 'An extension of EditText with pin style'
 
-    siteUrl = 'https://github.com/oakkub/pincode-edittext' // Homepage URL of the library
-    gitUrl = 'https://github.com/oakkub/pincode-edittext.git' // Git repository URL
+    siteUrl = 'https://github.com/oakkub/pin-edittext' // Homepage URL of the library
+    gitUrl = 'https://github.com/oakkub/pin-edittext.git' // Git repository URL
 
-    libraryVersion = '1.0.1' // This is the library version used when deploying the artifact
+    libraryVersion = project.libVersionName // This is the library version used when deploying the artifact
 
     developerId = 'oakkub'
     developerName = 'Metas Kerdwat'
