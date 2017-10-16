@@ -1,6 +1,8 @@
 # pin-edittext
 An extension of EditText with pin style
 
+![Sceenshot](https://user-images.githubusercontent.com/9587882/31598644-f307ce54-b278-11e7-8082-34249a4e07c5.gif)
+
 Usage
 --------
 Include `PinCodeEditText` in your layout XML
