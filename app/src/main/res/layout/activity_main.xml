@@ -6,16 +6,21 @@
     android:orientation="vertical">
 
     <com.oakkub.android.PinCodeEditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:inputType="textNoSuggestions"
         android:maxLength="4"
         android:padding="16dp" />
 
     <com.oakkub.android.PinCodeEditText
+        android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:inputType="number"
+        android:maxLength="5"
         android:padding="16dp"
         app:pinHeight="24dp"
         app:pinHighlightStateDrawable="@drawable/pin_red_oval_highlight_state"
@@ -24,14 +29,17 @@
         app:pinWidth="24dp" />
 
     <com.oakkub.android.PinCodeEditText
+        android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
+        android:inputType="number"
+        android:maxLength="6"
         android:padding="16dp"
-        app:pinHeight="24dp"
+        app:pinHeight="36dp"
         app:pinHighlightStateDrawable="@drawable/pin_blue_rect_highlight_state"
         app:pinNormalStateDrawable="@drawable/pin_blue_rect_normal_state"
         app:pinSpace="16dp"
-        app:pinWidth="24dp" />
+        app:pinWidth="36dp" />
 
 </LinearLayout>
