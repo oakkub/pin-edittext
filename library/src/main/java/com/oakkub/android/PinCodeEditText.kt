@@ -19,18 +19,22 @@ import android.widget.TextView
  * Created by oakkub on 8/24/2017 AD.
  */
 
-class PinCodeEditText @JvmOverloads constructor(
-        context: Context,
-        attrs: AttributeSet? = null,
-        defStyleAttr: Int = 0
-) : AppCompatEditText(context, attrs, defStyleAttr) {
+class PinCodeEditText : AppCompatEditText {
 
     private lateinit var pinCodePainter: PinCodePainter
 
     private var onClickListener: View.OnClickListener? = null
     private var onEditorActionListener: TextView.OnEditorActionListener? = null
 
-    init {
+    constructor(context: Context) : super(context) {
+        init(null, 0)
+    }
+
+    constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
+        init(attrs, 0)
+    }
+
+    constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(context, attrs, defStyleAttr) {
         init(attrs, defStyleAttr)
     }
 
@@ -82,8 +86,8 @@ class PinCodeEditText @JvmOverloads constructor(
         isCursorVisible = false
         isLongClickable = false
         customSelectionActionModeCallback = ActionModeCallbackInterceptor()
-        setBackgroundColor(Color.TRANSPARENT)
         maxLines = 1
+        setBackgroundColor(Color.TRANSPARENT)
 
         initClickListener()
         initOnEditorActionListener()
