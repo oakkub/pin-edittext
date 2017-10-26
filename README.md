@@ -7,7 +7,7 @@ Usage
 --------
 Include `PinCodeEditText` in your layout XML
 ```xml
-<com.oakkub.android.PinCodeEditText
+<com.oakkub.android.PinEditText
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:maxLength="4"
