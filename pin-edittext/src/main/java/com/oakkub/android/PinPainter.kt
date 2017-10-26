@@ -12,13 +12,13 @@ import android.widget.TextView
 /**
  * Created by oakkub on 8/24/2017 AD.
  */
-class PinCodePainter @JvmOverloads constructor(normalPinDrawableRes: Drawable,
-                                               highlightPinDrawableRes: Drawable,
-                                               private val view: TextView,
-                                               private val pinWidth: Float,
-                                               private val pinHeight: Float,
-                                               private val totalPin: Int = 4,
-                                               private val space: Int = 0) {
+class PinPainter @JvmOverloads constructor(normalPinDrawableRes: Drawable,
+                                           highlightPinDrawableRes: Drawable,
+                                           private val view: TextView,
+                                           private val pinWidth: Float,
+                                           private val pinHeight: Float,
+                                           private val totalPin: Int = 4,
+                                           private val space: Int = 0) {
 
     private val paint = Paint().apply {
         isAntiAlias = true

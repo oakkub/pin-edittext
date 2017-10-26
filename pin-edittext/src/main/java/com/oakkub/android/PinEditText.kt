@@ -19,9 +19,9 @@ import android.widget.TextView
  * Created by oakkub on 8/24/2017 AD.
  */
 
-class PinCodeEditText : AppCompatEditText {
+class PinEditText : AppCompatEditText {
 
-    private lateinit var pinCodePainter: PinCodePainter
+    private lateinit var pinPainter: PinPainter
 
     private var onClickListener: View.OnClickListener? = null
     private var onEditorActionListener: TextView.OnEditorActionListener? = null
@@ -74,12 +74,12 @@ class PinCodeEditText : AppCompatEditText {
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
 
-        val (newWidthMeasureSpec, newHeightMeasureSpec) = pinCodePainter.getCalculatedMeasureSpecSize()
+        val (newWidthMeasureSpec, newHeightMeasureSpec) = pinPainter.getCalculatedMeasureSpecSize()
         setMeasuredDimension(newWidthMeasureSpec, newHeightMeasureSpec)
     }
 
     override fun onDraw(canvas: Canvas) {
-        pinCodePainter.draw(canvas)
+        pinPainter.draw(canvas)
     }
 
     private fun init(attrs: AttributeSet?, defStyleAttr: Int) {
@@ -100,19 +100,19 @@ class PinCodeEditText : AppCompatEditText {
         var pinSpace = context.dpToPx(16).toInt()
 
         if (attrs != null) {
-            val typedArray = context.obtainStyledAttributes(attrs, R.styleable.PinCodeEditText, defStyleAttr, 0)
+            val typedArray = context.obtainStyledAttributes(attrs, R.styleable.PinEditText, defStyleAttr, 0)
 
             try {
 
                 pinTotal = getTextViewMaxLength(attrs, pinTotal)
-                pinWidth = typedArray.getDimensionPixelSize(R.styleable.PinCodeEditText_pinWidth, pinWidth)
-                pinHeight = typedArray.getDimensionPixelSize(R.styleable.PinCodeEditText_pinHeight, pinHeight)
-                pinSpace = typedArray.getDimensionPixelSize(R.styleable.PinCodeEditText_pinSpace, pinSpace)
+                pinWidth = typedArray.getDimensionPixelSize(R.styleable.PinEditText_pinWidth, pinWidth)
+                pinHeight = typedArray.getDimensionPixelSize(R.styleable.PinEditText_pinHeight, pinHeight)
+                pinSpace = typedArray.getDimensionPixelSize(R.styleable.PinEditText_pinSpace, pinSpace)
 
-                typedArray.getDrawable(R.styleable.PinCodeEditText_pinNormalStateDrawable)?.let {
+                typedArray.getDrawable(R.styleable.PinEditText_pinNormalStateDrawable)?.let {
                     normalStateDrawable = it
                 }
-                typedArray.getDrawable(R.styleable.PinCodeEditText_pinHighlightStateDrawable)?.let {
+                typedArray.getDrawable(R.styleable.PinEditText_pinHighlightStateDrawable)?.let {
                     highlightStateDrawable = it
                 }
 
@@ -130,7 +130,7 @@ class PinCodeEditText : AppCompatEditText {
             "highlightStateDrawable must not be null"
         }
 
-        pinCodePainter = PinCodePainter(
+        pinPainter = PinPainter(
                 normalStateDrawable!!,
                 highlightStateDrawable!!,
                 this,

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.oakkub.android.PinCodeEditText
+    <com.oakkub.android.PinEditText
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,7 +14,7 @@
         android:maxLength="4"
         android:padding="16dp" />
 
-    <com.oakkub.android.PinCodeEditText
+    <com.oakkub.android.PinEditText
         android:id="@+id/editText2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
         app:pinSpace="16dp"
         app:pinWidth="24dp" />
 
-    <com.oakkub.android.PinCodeEditText
+    <com.oakkub.android.PinEditText
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
