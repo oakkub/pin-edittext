@@ -1,7 +1,7 @@
 # pin-edittext
 
-[![platform](https://img.shields.io/badge/platform-android-brightgreen.svg)]
-[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)
+[![platform](https://img.shields.io/badge/platform-android-brightgreen.svg)](https://www.android.com)
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://img.shields.io/badge/platform-android-brightgreen.svg)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 An extension of EditText with pin style
