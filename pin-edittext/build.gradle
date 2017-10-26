@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'com.jfrog.bintray'
-apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'org.jetbrains.dokka-android'
+apply plugin: 'com.github.dcendents.android-maven'
 
 android {
     compileSdkVersion project.compileSdkVersion
@@ -24,6 +24,11 @@ android {
         }
     }
 
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        main.res.srcDirs += 'src/main/res'
+    }
+
 }
 
 repositories {
@@ -32,11 +37,11 @@ repositories {
 }
 
 ext {
-    bintrayRepo = 'oakkub' // Default is 'maven'
+    bintrayRepo = 'maven' // Default is 'maven'
     bintrayName = 'pin-edittext'
 
-    publishedGroupId = 'com.oakkub' // Maven Group ID for the artifact
-    libraryName = 'PinEditText'
+    publishedGroupId = 'com.oakkub.android' // Maven Group ID for the artifact
+    libraryName = 'pin-edittext'
     artifact = 'pin-edittext'
 
     libraryDescription = 'An extension of EditText with pin style'
@@ -96,41 +101,14 @@ install {
     }
 }
 
-if (project.hasProperty("kotlin")) { //Kotlin libraries
-    task sourcesJar(type: Jar) {
-        classifier = 'sources'
-        from android.sourceSets.main.java.srcDirs
-    }
-
-    task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaAndroidTask) {
-        outputFormat = 'javadoc'
-        outputDirectory = "$buildDir/javadoc"
-    }
-
-    task javadoc(type: Javadoc, dependsOn: dokkaJavadoc) {
-
-    }
-
-} else if (project.hasProperty("android")) { // Android libraries
-    task sourcesJar(type: Jar) {
-        classifier = 'sources'
-        from android.sourceSets.main.java.srcDirs
-    }
-
-    task javadoc(type: Javadoc) {
-        source = android.sourceSets.main.java.srcDirs
-        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-    }
-} else { // Java libraries
-    task sourcesJar(type: Jar, dependsOn: classes) {
-        classifier = 'sources'
-        from sourceSets.main.allSource
-    }
+task sourcesJar(type: Jar) {
+    classifier = 'sources'
+    from android.sourceSets.main.java.srcDirs
 }
 
-task javadocJar(type: Jar, dependsOn: javadoc) {
+task javadocJar(type: Jar, dependsOn: dokka) {
     classifier = 'javadoc'
-    from javadoc.destinationDir
+    from dokka.outputDirectory
 }
 
 artifacts {
