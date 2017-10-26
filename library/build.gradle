@@ -1,7 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
-apply plugin: 'kotlin-android'
 apply plugin: 'org.jetbrains.dokka-android'
 
 android {
@@ -26,16 +26,16 @@ android {
 
 }
 
-dokka {
-    outputFormat = 'html'
-    outputDirectory = "$buildDir/javadoc"
+repositories {
+    jcenter()
+    google()
 }
 
 ext {
     bintrayRepo = 'oakkub' // Default is 'maven'
     bintrayName = 'pin-edittext'
 
-    publishedGroupId = 'com.oakkub.android' // Maven Group ID for the artifact
+    publishedGroupId = 'com.oakkub' // Maven Group ID for the artifact
     libraryName = 'PinEditText'
     artifact = 'pin-edittext'
 
@@ -102,9 +102,15 @@ if (project.hasProperty("kotlin")) { //Kotlin libraries
         from android.sourceSets.main.java.srcDirs
     }
 
-    task javadoc(type: Javadoc, dependsOn: dokka) {
+    task dokkaJavadoc(type: org.jetbrains.dokka.gradle.DokkaAndroidTask) {
+        outputFormat = 'javadoc'
+        outputDirectory = "$buildDir/javadoc"
+    }
+
+    task javadoc(type: Javadoc, dependsOn: dokkaJavadoc) {
 
     }
+
 } else if (project.hasProperty("android")) { // Android libraries
     task sourcesJar(type: Jar) {
         classifier = 'sources'

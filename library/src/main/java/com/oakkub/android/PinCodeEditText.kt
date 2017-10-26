@@ -92,8 +92,8 @@ class PinCodeEditText : AppCompatEditText {
         initClickListener()
         initOnEditorActionListener()
 
-        var normalStateDrawable: Drawable = ContextCompat.getDrawable(context, R.drawable.pin_default_normal_state)
-        var highlightStateDrawable: Drawable = ContextCompat.getDrawable(context, R.drawable.pin_default_highlight_state)
+        var normalStateDrawable: Drawable? = ContextCompat.getDrawable(context, R.drawable.pin_default_normal_state)
+        var highlightStateDrawable: Drawable? = ContextCompat.getDrawable(context, R.drawable.pin_default_highlight_state)
         var pinWidth = context.dpToPx(24).toInt()
         var pinHeight = context.dpToPx(24).toInt()
         var pinTotal = 4
@@ -122,9 +122,17 @@ class PinCodeEditText : AppCompatEditText {
 
         }
 
+        require(normalStateDrawable != null) {
+            "normalStateDrawable must not be null"
+        }
+
+        require(highlightStateDrawable != null) {
+            "highlightStateDrawable must not be null"
+        }
+
         pinCodePainter = PinCodePainter(
-                normalStateDrawable,
-                highlightStateDrawable,
+                normalStateDrawable!!,
+                highlightStateDrawable!!,
                 this,
                 pinWidth.toFloat(),
                 pinHeight.toFloat(),
