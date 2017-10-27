@@ -86,7 +86,7 @@ class PinEditText : AppCompatEditText {
         isCursorVisible = false
         isLongClickable = false
         customSelectionActionModeCallback = ActionModeCallbackInterceptor()
-        maxLines = 1
+        maxLines = DEFAULT_PIN_MAX_LINES
         setBackgroundColor(Color.TRANSPARENT)
 
         initClickListener()
@@ -94,10 +94,10 @@ class PinEditText : AppCompatEditText {
 
         var normalStateDrawable: Drawable? = ContextCompat.getDrawable(context, R.drawable.pin_default_normal_state)
         var highlightStateDrawable: Drawable? = ContextCompat.getDrawable(context, R.drawable.pin_default_highlight_state)
-        var pinWidth = context.dpToPx(24).toInt()
-        var pinHeight = context.dpToPx(24).toInt()
-        var pinTotal = 4
-        var pinSpace = context.dpToPx(16).toInt()
+        var pinWidth = context.dpToPx(DEFAULT_PIN_WIDTH)
+        var pinHeight = context.dpToPx(DEFAULT_PIN_HEIGHT)
+        var pinTotal = DEFAULT_PIN_TOTAL
+        var pinSpace = context.dpToPx(DEFAULT_PIN_SPACE)
 
         if (attrs != null) {
             val typedArray = context.obtainStyledAttributes(attrs, R.styleable.PinEditText, defStyleAttr, 0)
@@ -105,9 +105,9 @@ class PinEditText : AppCompatEditText {
             try {
 
                 pinTotal = getTextViewMaxLength(attrs, pinTotal)
-                pinWidth = typedArray.getDimensionPixelSize(R.styleable.PinEditText_pinWidth, pinWidth)
-                pinHeight = typedArray.getDimensionPixelSize(R.styleable.PinEditText_pinHeight, pinHeight)
-                pinSpace = typedArray.getDimensionPixelSize(R.styleable.PinEditText_pinSpace, pinSpace)
+                pinWidth = typedArray.getDimension(R.styleable.PinEditText_pinWidth, pinWidth)
+                pinHeight = typedArray.getDimension(R.styleable.PinEditText_pinHeight, pinHeight)
+                pinSpace = typedArray.getDimension(R.styleable.PinEditText_pinSpace, pinSpace)
 
                 typedArray.getDrawable(R.styleable.PinEditText_pinNormalStateDrawable)?.let {
                     normalStateDrawable = it
@@ -134,8 +134,8 @@ class PinEditText : AppCompatEditText {
                 normalStateDrawable!!,
                 highlightStateDrawable!!,
                 this,
-                pinWidth.toFloat(),
-                pinHeight.toFloat(),
+                pinWidth,
+                pinHeight,
                 pinTotal,
                 pinSpace)
     }
@@ -178,6 +178,12 @@ class PinEditText : AppCompatEditText {
          * android: namespace
          */
         private const val XML_NAMESPACE_ANDROID = "http://schemas.android.com/apk/res/android"
+
+        private const val DEFAULT_PIN_WIDTH = 24
+        private const val DEFAULT_PIN_HEIGHT = 24
+        private const val DEFAULT_PIN_TOTAL = 4
+        private const val DEFAULT_PIN_SPACE = 16
+        private const val DEFAULT_PIN_MAX_LINES = 1
 
     }
 

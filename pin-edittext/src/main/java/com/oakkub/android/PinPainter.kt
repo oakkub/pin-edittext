@@ -18,7 +18,7 @@ class PinPainter @JvmOverloads constructor(normalPinDrawableRes: Drawable,
                                            private val pinWidth: Float,
                                            private val pinHeight: Float,
                                            private val totalPin: Int = 4,
-                                           private val space: Int = 0) {
+                                           private val space: Float = 0f) {
 
     private val paint = Paint().apply {
         isAntiAlias = true
