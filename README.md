@@ -41,7 +41,7 @@ Add this to your app module's `build.gradle` file
 ```groovy
 dependencies {
     ...
-    compile 'com.oakkub.android:pin-edittext:1.1.2'
+    compile 'com.oakkub.android:pin-edittext:1.1.3'
 }
 ```
 
