@@ -1,8 +1,10 @@
 # pin-edittext
+
+[![platform](https://img.shields.io/badge/platform-android-brightgreen.svg)](https://www.android.com)
+[![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://img.shields.io/badge/platform-android-brightgreen.svg)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 An extension of EditText with pin style
-[![platform](https://img.shields.io/badge/platform-Android-yellow.svg)](https://www.android.com)
-[![API](https://img.shields.io/badge/API-19%2B-brightgreen.svg?style=plastic)](https://android-arsenal.com/api?level=15)
-[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 ![Sceenshot](https://user-images.githubusercontent.com/9587882/31598644-f307ce54-b278-11e7-8082-34249a4e07c5.gif)
 
@@ -15,13 +17,13 @@ Include `PinCodeEditText` in your layout XML
     android:layout_height="wrap_content"
     android:maxLength="4"
     android:inputType="textNoSuggestions"
-    app:pinHighlightStateDrawable="@drawable/pin_oval_highlight_state"
-    app:pinNormalStateDrawable="@drawable/pin_oval_normal_state"
+    app:pinHighlightStateDrawable="@drawable/your_pin_highlight_state"
+    app:pinNormalStateDrawable="@drawable/your_pin_normal_state"
     app:pinSpace="16dp"
     app:pinHeight="24dp"
     app:pinWidth="24dp"/>
 ```
-- **android:maxLength:** The total pin (Required to make PinEditText limit its length)
+- **android:maxLength:** The total pin **(Required to make PinEditText limit its length)**
 - **android:inputType:** Preferred "textNoSuggestions" (If you want text) or "number" (If you want only number)
 - **app:pinSpace:** Space between each pin (Default: 16dp)
 - **app:pinHeight:** Height of each pin (Default: 24dp)
