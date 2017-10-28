@@ -1,7 +1,10 @@
 # pin-edittext
 
 [![platform](https://img.shields.io/badge/platform-android-brightgreen.svg)](https://www.android.com)
+[ ![Kotlin](https://img.shields.io/badge/Kotlin-1.1.5.1-blue.svg)](http://kotlinlang.org) 
+[ ![jcenter](https://api.bintray.com/packages/oakkub1995/maven/pin-edittext/images/download.svg)](https://bintray.com/oakkub1995/maven/pin-edittext/_latestVersion)
 [![API](https://img.shields.io/badge/API-15%2B-brightgreen.svg?style=flat)](https://img.shields.io/badge/platform-android-brightgreen.svg)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-pin--edittext-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6379)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 An extension of EditText with pin style
